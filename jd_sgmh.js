@@ -24,10 +24,7 @@ const $ = new Env('闪购盲盒');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let appId = '1EFRXxg' , homeDataFunPrefix = 'interact_template', collectScoreFunPrefix = 'harmony', message = ''
 let lotteryResultFunPrefix = homeDataFunPrefix, browseTime = 6
-const inviteCodes = [
-  'T0159KUiH11Mq1bSKBoCjVQmoaT5kRrbA@T0225KkcRh9P9FbRKUygl_UJcgCjVQmoaT5kRrbA',
-  'T0159KUiH11Mq1bSKBoCjVQmoaT5kRrbA@T0225KkcRh9P9FbRKUygl_UJcgCjVQmoaT5kRrbA',
-];
+const inviteCodes = [];
 const randomCount = $.isNode() ? 20 : 5;
 const notify = $.isNode() ? require('./sendNotify') : '';
 let merge = {}
@@ -292,7 +289,7 @@ function shareCodesFormat() {
       const tempIndex = $.index > inviteCodes.length ? (inviteCodes.length - 1) : ($.index - 1);
       $.newShareCodes = inviteCodes[tempIndex].split('@');
     }
-    const readShareCodeRes = await readShareCode();
+    const readShareCodeRes = '';
     // console.log(readShareCodeRes)
     if (readShareCodeRes && readShareCodeRes.code === 200) {
       $.newShareCodes = [...new Set([...$.newShareCodes, ...(readShareCodeRes.data || [])])];

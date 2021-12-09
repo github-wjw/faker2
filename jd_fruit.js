@@ -116,7 +116,7 @@ async function jdFruit() {
       await duck();
       if(process.env.DO_TEN_WATER_AGAIN){
         console.log('执行再次浇水')
-        await doTenWaterAgain();//再次浇水
+        //await doTenWaterAgain();//再次浇水
       } else {
         console.log('不执行再次浇水，攒水滴')
       }
@@ -228,7 +228,7 @@ async function doDailyTask() {
   //   getExtraAward(),//领取额外水滴奖励
   //   turntableFarm()//天天抽奖得好礼
   // ])
-  await getAwardInviteFriend();
+  //await getAwardInviteFriend();
   await clockInIn();//打卡领水
   await executeWaterRains();//水滴雨
   await getExtraAward();//领取额外水滴奖励
